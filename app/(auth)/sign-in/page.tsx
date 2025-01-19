@@ -2,9 +2,9 @@ import React from 'react'
 
 const SignIn = () => {
   return (
-    <div>
+    <section className="flex-center size-full">
       SignIn
-    </div>
+    </section>
   )
 }
 
