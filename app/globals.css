@@ -108,15 +108,15 @@
 
   /* Home */
   .home {
-    @apply no-scrollbar flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
+    @apply no-scrollbar flex w-full flex-col max-h-screen overflow-y-scroll;
   }
 
   .home-content {
-    @apply no-scrollbar flex w-full flex-1 flex-col gap-8 px-5 sm:px-8 py-7 lg:py-12 xl:max-h-screen xl:overflow-y-scroll;
+    @apply no-scrollbar flex w-full flex-1 flex-col gap-6 sm:gap-8 px-4 sm:px-8 py-4 sm:py-7 lg:py-12 max-w-7xl mx-auto;
   }
 
   .home-header {
-    @apply flex flex-col justify-between gap-8;
+    @apply flex flex-col justify-between gap-6 sm:gap-8;
   }
 
   .total-balance {
@@ -158,10 +158,7 @@
     @apply custom-scrollbar mb-8 flex w-full flex-nowrap;
   }
 
-  /* Right sidebar */
-  .right-sidebar {
-    @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:overflow-y-scroll !important;
-  }
+  /* Right sidebar - removed */
 
   .profile-banner {
     @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
@@ -193,12 +190,12 @@
 
   /* My Banks */
   .my-banks {
-    @apply flex h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 p-8 xl:py-12;
+    @apply flex h-screen max-h-screen w-full flex-col gap-6 sm:gap-8 bg-gray-25 p-4 sm:p-8 xl:py-12;
   }
 
   /* My Banks */
   .transactions {
-    @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
+    @apply flex max-h-screen w-full flex-col gap-6 sm:gap-8 overflow-y-scroll bg-gray-25 p-4 sm:p-8 xl:py-12;
   }
 
   .transactions-header {
@@ -397,15 +394,15 @@
 
   .button-primary {
     @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800
-           text-white font-semibold py-3 px-6 rounded-lg shadow-lg
+           text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg
            hover:shadow-xl transform hover:scale-105 transition-all duration-200
-           focus:ring-4 focus:ring-blue-500/50 active:scale-95;
+           focus:ring-4 focus:ring-blue-500/50 active:scale-95 text-sm sm:text-base;
   }
 
   .button-secondary {
-    @apply bg-white border-2 border-blue-600 text-blue-600 font-semibold py-2.5 px-5 rounded-lg
+    @apply bg-white border-2 border-blue-600 text-blue-600 font-semibold py-2 sm:py-2.5 px-3 sm:px-5 rounded-lg
            hover:bg-blue-50 hover:border-blue-700 hover:text-blue-700
-           transition-all duration-200 hover:shadow-md hover:scale-105 active:scale-95;
+           transition-all duration-200 hover:shadow-md hover:scale-105 active:scale-95 text-sm sm:text-base;
   }
 
   .transaction-row {
@@ -419,7 +416,7 @@
   }
 
   .stats-card {
-    @apply bg-white rounded-xl p-6 shadow-lg border border-gray-100
+    @apply bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-100
            hover:shadow-xl hover:border-blue-200 transition-all duration-300;
   }
 
@@ -556,6 +553,41 @@
     }
     90% {
       transform: translate3d(0, -4px, 0);
+    }
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    .header-box-title {
+      @apply text-20 font-semibold text-gray-900;
+    }
+    
+    .header-box-subtext {
+      @apply text-12 font-normal text-gray-600;
+    }
+    
+    .total-balance {
+      @apply flex-col items-start gap-3 p-4;
+    }
+    
+    .total-balance-chart {
+      @apply max-w-[80px] mx-auto;
+    }
+    
+    .bank-card {
+      @apply h-[160px] max-w-full;
+    }
+    
+    .status-badge {
+      @apply px-2 py-0.5 text-xs;
+    }
+    
+    .category-badge {
+      @apply px-2 py-0.5 text-xs;
+    }
+    
+    .recent-transactions-label {
+      @apply text-18 font-semibold text-gray-900;
     }
   }
 }

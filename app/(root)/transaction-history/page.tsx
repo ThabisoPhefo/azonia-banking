@@ -103,17 +103,17 @@ const TransactionHistory = () => {
         />
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         <div className="balance-card">
           <div className="flex flex-col gap-2">
-            <h2 className="text-18 font-bold text-white">
+            <h2 className="text-base sm:text-18 font-bold text-white">
               💳 Account Details
             </h2>
             <div className="flex flex-col gap-1">
-              <p className="text-14 text-blue-100">
+              <p className="text-sm sm:text-14 text-blue-100">
                 🏦 Bank: Chase Bank
               </p>
-              <p className="text-14 font-semibold text-white">
+              <p className="text-sm sm:text-14 font-semibold text-white">
                 📊 Account: ****1234
               </p>
             </div>
@@ -121,10 +121,10 @@ const TransactionHistory = () => {
         </div>
 
         <section className="stats-card">
-          <h2 className="text-20 font-semibold gradient-text mb-6">
+          <h2 className="text-lg sm:text-20 font-semibold gradient-text mb-4 sm:mb-6">
             📈 Recent Transactions
           </h2>
-          <div className="w-full">
+          <div className="w-full overflow-x-auto">
             <TransactionsTable transactions={transactions} />
           </div>
         </section>

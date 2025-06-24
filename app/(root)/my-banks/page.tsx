@@ -44,10 +44,10 @@ const MyBanks = () => {
         />
 
         <div className="stats-card">
-          <h2 className="header-2 gradient-text mb-6">
+          <h2 className="header-2 gradient-text mb-4 sm:mb-6 text-lg sm:text-xl">
             💳 Your cards
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {accounts && accounts.map((account: Account) => (
               <div key={account.id} className="card-hover">
                 <BankCard

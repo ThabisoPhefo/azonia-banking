@@ -31,17 +31,18 @@ const CategoryBadge = ({ category }: CategoryBadgeProps) => {
 
 const TransactionsTable = ({ transactions }: TransactionTableProps) => {
   return (
-    <Table>
-      <TableHeader className="table-header">
-        <TableRow>
-          <TableHead className="px-2">Transaction</TableHead>
-          <TableHead className="px-2">Amount</TableHead>
-          <TableHead className="px-2">Status</TableHead>
-          <TableHead className="px-2">Date</TableHead>
-          <TableHead className="px-2 max-md:hidden">Channel</TableHead>
-          <TableHead className="px-2 max-md:hidden">Category</TableHead>
-        </TableRow>
-      </TableHeader>
+    <div className="min-w-full">
+      <Table>
+        <TableHeader className="table-header">
+          <TableRow>
+            <TableHead className="px-1 sm:px-2 text-xs sm:text-sm">Transaction</TableHead>
+            <TableHead className="px-1 sm:px-2 text-xs sm:text-sm">Amount</TableHead>
+            <TableHead className="px-1 sm:px-2 text-xs sm:text-sm">Status</TableHead>
+            <TableHead className="px-1 sm:px-2 text-xs sm:text-sm">Date</TableHead>
+            <TableHead className="px-1 sm:px-2 max-md:hidden text-xs sm:text-sm">Channel</TableHead>
+            <TableHead className="px-1 sm:px-2 max-md:hidden text-xs sm:text-sm">Category</TableHead>
+          </TableRow>
+        </TableHeader>
       <TableBody>
         {transactions.map((t: Transaction) => {
           const status = t.pending ? "Processing" : "Success"
@@ -54,16 +55,16 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
               key={t.id}
               className={`transaction-row ${isDebit || amount[0] === "-" ? "hover:bg-red-50/30" : "hover:bg-green-50/30"}`}
             >
-              <TableCell className="max-w-[250px] pl-2 pr-10">
-                <div className="flex items-center gap-3">
-                  <h1 className="text-14 truncate font-semibold text-[#344054]">
+              <TableCell className="max-w-[120px] sm:max-w-[250px] pl-1 sm:pl-2 pr-2 sm:pr-10">
+                <div className="flex items-center gap-1 sm:gap-3">
+                  <h1 className="text-xs sm:text-14 truncate font-semibold text-[#344054]">
                     {t.name}
                   </h1>
                 </div>
               </TableCell>
 
               <TableCell
-                className={`pl-2 pr-10 font-semibold ${
+                className={`pl-1 sm:pl-2 pr-2 sm:pr-10 font-semibold text-xs sm:text-sm ${
                   isDebit || amount[0] === "-"
                     ? "text-[#f04438]"
                     : "text-[#039855]"
@@ -72,30 +73,39 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
                 {isDebit ? `-$${t.amount}` : `+$${t.amount}`}
               </TableCell>
 
-              <TableCell className="pl-2 pr-10">
+              <TableCell className="pl-1 sm:pl-2 pr-2 sm:pr-10">
                 <CategoryBadge category={status} />
               </TableCell>
 
-              <TableCell className="min-w-32 pl-2 pr-10">
-                {new Date(t.date).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: '2-digit',
-                  year: 'numeric'
-                })}
+              <TableCell className="min-w-20 sm:min-w-32 pl-1 sm:pl-2 pr-2 sm:pr-10 text-xs sm:text-sm">
+                <div className="block sm:hidden">
+                  {new Date(t.date).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: '2-digit'
+                  })}
+                </div>
+                <div className="hidden sm:block">
+                  {new Date(t.date).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: '2-digit',
+                    year: 'numeric'
+                  })}
+                </div>
               </TableCell>
 
-              <TableCell className="pl-2 pr-10 capitalize min-w-24 max-md:hidden">
+              <TableCell className="pl-1 sm:pl-2 pr-2 sm:pr-10 capitalize min-w-20 sm:min-w-24 max-md:hidden text-xs sm:text-sm">
                 {t.paymentChannel}
               </TableCell>
 
-              <TableCell className="pl-2 pr-10 max-md:hidden">
+              <TableCell className="pl-1 sm:pl-2 pr-2 sm:pr-10 max-md:hidden">
                 <CategoryBadge category={t.category} />
               </TableCell>
             </TableRow>
           )
         })}
       </TableBody>
-    </Table>
+      </Table>
+    </div>
   )
 }
 
