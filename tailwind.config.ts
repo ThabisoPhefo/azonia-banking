@@ -82,6 +82,10 @@ const config = {
         profile:
           "0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)",
         creditCard: "8px 10px 16px 0px rgba(0, 0, 0, 0.05)",
+        "3xl": "0 35px 60px -12px rgba(0, 0, 0, 0.25)",
+        "4xl": "0 45px 65px -15px rgba(0, 0, 0, 0.25)",
+        glow: "0 0 20px rgba(59, 130, 246, 0.5)",
+        "glow-lg": "0 0 40px rgba(59, 130, 246, 0.6)",
       },
       fontFamily: {
         inter: "var(--font-inter)",

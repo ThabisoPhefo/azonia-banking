@@ -7,7 +7,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const loggedIn = {firstName: 'Thabiso', lastNane: 'Phefo'};
+  const loggedIn = {
+    $id: '1',
+    email: 'phefothabiso@gmail.com',
+    userId: 'user_1',
+    dwollaCustomerUrl: 'https://api-sandbox.dwolla.com/customers/test',
+    dwollaCustomerId: 'customer_1',
+    firstName: 'Thabiso',
+    lastName: 'Phefo',
+    address1: '123 Main St',
+    city: 'Johannesburg',
+    state: 'GP',
+    postalCode: '2000',
+    dateOfBirth: '1990-01-01',
+    ssn: '1234',
+  };
 
   return (
     <main className="flex h-screen w-full font-inter">
