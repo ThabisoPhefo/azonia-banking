@@ -2,7 +2,7 @@ export const sidebarLinks = [
   {
     imgURL: "/icons/home.svg",
     route: "/",
-    label: "Home",
+    label: "Dashboard",
   },
   {
     imgURL: "/icons/dollar-circle.svg",
@@ -12,12 +12,62 @@ export const sidebarLinks = [
   {
     imgURL: "/icons/transaction.svg",
     route: "/transaction-history",
-    label: "Transaction History",
+    label: "Transactions",
   },
   {
     imgURL: "/icons/money-send.svg",
     route: "/payment-transfer",
     label: "Transfer Funds",
+  },
+  {
+    imgURL: "/icons/credit-card.svg",
+    route: "/cards",
+    label: "Cards & Credit",
+  },
+  {
+    imgURL: "/icons/bank.svg",
+    route: "/loans",
+    label: "Loans",
+  },
+  {
+    imgURL: "/icons/chart.svg",
+    route: "/investments",
+    label: "Investments",
+  },
+  {
+    imgURL: "/icons/receipt.svg",
+    route: "/bills",
+    label: "Bills & Payments",
+  },
+  {
+    imgURL: "/icons/pie-chart.svg",
+    route: "/budget",
+    label: "Budget",
+  },
+  {
+    imgURL: "/icons/document.svg",
+    route: "/statements",
+    label: "Statements",
+  },
+  {
+    imgURL: "/icons/gift.svg",
+    route: "/rewards",
+    label: "Rewards",
+  },
+  {
+    imgURL: "/icons/location.svg",
+    route: "/locations",
+    label: "ATM Locator",
+  },
+  {
+    imgURL: "/icons/headphones.svg",
+    route: "/support",
+    label: "Support",
+  },
+  {
+    imgURL: "/icons/settings.svg",
+    route: "/settings",
+    label: "Settings",
   },
 ];
 
